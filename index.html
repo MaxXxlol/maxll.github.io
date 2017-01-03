@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>123</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+	<div ng-controller="NewsController" ng-init="Filter = 20">
+		
+		<div class="group" >
+			<p>Filter</p>
+			<input type="text" ng-model="Filter">
+		</div>
+
+		<div class="news" ng-repeat="item in results | PostFilter:Filter">
+			<h2>{{item.title}}</h2>
+			<p>{{item.abstract}}</p>
+			<p><a href={{item.url}}>All</a></p>
+			<img src={{item.multimedia[1].url}}>
+		</div>
+	
+
+		<div class="news" ng-repeat="item in MyPosts.Info">
+			<h2>{{item.title}}</h2>
+			<p>{{item.abstr}}</p>
+			<p><a href={{item.link}}>All</a></p>
+		</div>
+	</div>
+
+	<div ng-controller="PostController" class="addPost">
+		<h2>Create post</h2>
+		<div class="group">
+			<p>Title</p>
+			<input type="text" ng-model="myPost.title">
+		</div>
+		<div class="group">
+			<p>Abstract</p>
+			<textarea ng-model="myPost.abstr"></textarea>
+		</div>
+		<div class="group">
+			<p>Link</p>
+			<input type="text" ng-model="myPost.link">
+		</div>
+
+		<p><button type="submit" ng-click="newPost(myPost)">Create</button></p>
+	</div>
+
+</body>
+</html>

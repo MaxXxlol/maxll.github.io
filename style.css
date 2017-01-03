@@ -1,0 +1,32 @@
+.news{
+	border-radius: 2px;
+	border: solid black 2px;
+	height: auto;
+	margin: 5px;
+	width: 100%;
+}
+img{
+	height: auto;
+	margin: 5px;
+}
+
+p{
+	margin: 5px;
+}
+
+h2{
+	margin: 5px;
+}
+
+.addPost{
+	border-radius: 2px;
+	border: solid grey 2px;
+	height: auto;
+	width: 50%;
+	margin: 5px;
+}
+
+.group{
+	margin: 10px;
+	width: 50px;
+}
